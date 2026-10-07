@@ -1,5 +1,5 @@
 # Dev Burguer
- Projeto desenvolvido para estudo, com a criação de uma Landing Page para uma lanchonete, aplicando conceitos de desenvolvimento web, responsividade e organização visual para proporcionar uma experiência moderna e intuitiva aos usuários.
+ Landing Page responsiva para pedidos de uma hamburgueria, desenvolvida para estudo. O projeto permitiu adquirir novos conhecimentos e aprimorar habilidades em desenvolvimento web, responsividade e criação de interfaces modernas.
 
 ##  Tecnologias utilizadas
 <div style="display: inline_block">
