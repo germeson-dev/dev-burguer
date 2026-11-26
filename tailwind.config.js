@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.{html,js}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{html,js}"
+  ],
   theme: {
-    fontFamily: {
-      'sans': ['Roboto', 'sans-serif']
+    fontFamily:{
+      'sans': ['Poppins', 'sans-serif']
     },
     extend: {
       backgroundImage:{
