@@ -155,6 +155,25 @@ checkOutBtn.addEventListener("click", function(){
         addressInput.classList.add("border-red-500")
         return;
     }
+
+    //Enviar pedido para api WhatsApp
+    const cartItems = cart.map((item) => {
+        return (
+            `${item.name}\nQuantidade: (${item.quantity})\nPreço: R$${item.price.toFixed(2)}\n\n`
+        )
+    }).join("")
+    
+    const texto = `*Pedido efetuado pelo site*\n\n`
+    const message = encodeURIComponent(cartItems)
+    const pedido = encodeURIComponent(texto)
+    const phone = "5511940547947"
+    const endereco = addressInput.value
+
+
+    window.open(`https://api.whatsapp.com/send/?phone=${phone}&text=${pedido}${message}Endereço: ${endereco}`)
+
+    cart = [];
+    updateCartModal();
 })
 
 //Verificar a hora e manipular o cart horário
