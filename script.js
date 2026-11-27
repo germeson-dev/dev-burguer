@@ -148,7 +148,26 @@ addressInput.addEventListener("input", function(event){
     //
 })
 
+//Finalizando pedido
 checkOutBtn.addEventListener("click", function(){
+
+    const isOpen = checkRestaurantOpen();
+    if(!isOpen){
+       Toastify({
+        text: "Ops. O Restaurante está Fechado!",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+        background: "#ef4444",
+        },
+       }).showToast();   
+       
+       return;
+    }
+
     if(cart.length === 0) return;
     if(addressInput.value === ""){
         addressWarn.classList.remove("hidden")
