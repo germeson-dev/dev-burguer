@@ -150,7 +150,7 @@ addressInput.addEventListener("input", function(event){
 
 //Finalizando pedido
 checkOutBtn.addEventListener("click", function(){
-
+    // Botão de restaurante fechado
     const isOpen = checkRestaurantOpen();
     if(!isOpen){
        Toastify({
@@ -164,8 +164,7 @@ checkOutBtn.addEventListener("click", function(){
         background: "#ef4444",
         },
        }).showToast();   
-       
-       return;
+        //    return; //Aqui para a execução do código impedindo enviar o pedido fora do horário de funcionamento.
     }
 
     if(cart.length === 0) return;
@@ -178,11 +177,11 @@ checkOutBtn.addEventListener("click", function(){
     //Enviar pedido para api WhatsApp
     const cartItems = cart.map((item) => {
         return (
-            `${item.name}\nQuantidade: (${item.quantity})\nPreço: R$${item.price.toFixed(2)}\n\n`
+            `- ${item.name}\n- Quantidade: (${item.quantity})\n- Preço: R$${item.price.toFixed(2)}\n\n`
         )
     }).join("")
     
-    const texto = `*Pedido efetuado pelo site*\n\n`
+    const texto = `*Pedido efetuado pelo site* 😋🍔\n\n`
     const message = encodeURIComponent(cartItems)
     const pedido = encodeURIComponent(texto)
     const phone = "5511940547947"
